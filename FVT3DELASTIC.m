@@ -1,10 +1,10 @@
-% A THREE_DIMENSIONAL FINITE-VOLUME THEORY CODE FOR STRESS ANALYSIS IN 
+% A THREE_DIMENSIONAL FINITE-VOLUME THEORY CODE FOR STRESS ANALYSIS IN
 % CONTINUUM ELASTIC STRUCTURES
 
-function FVT3DELASTIC(nx, ny, nz)
+function str = FVT3DELASTIC(nx, ny, nz)
 %% ____________________________________________________________USER-DEFINED
 [L, H, B] = deal(500, 100, 100);                                           % Cantelever beam dimensions (mm)
-[E0, nu]  = deal(150e3, 0.3);                                              % material's Young modulus (N/mm2: MPa) and Poisson's ratio
+[E0, nu]  = deal(150e3, 0.3);                                              % material's Young modulus (N/mm2: MPa) and Poisson ratio
 P  = -2e3;                                                                 % applied load (N)
 [pb, amp] = deal('flexure', 1e3);                                          % pb: 'flexure' or 'torsion'; amp: deformation amplification
 cp = [1, 6];                                                               % cp: (1: sigma_11), (2: sigma_22), (3: sigma_33), (4: sigma_23), (5: sigma_13), (6: sigma_12)
@@ -45,7 +45,7 @@ end
 %% FUNCTIONS
 
 % FINITE-VOLUME THEORY ANALYSIS
-[KL, ab, Ab, C] = LocalStiffMatrix(E0, nu, l, h, b);                       % local stiffness matrix                       
+[KL, ab, Ab, C] = LocalStiffMatrix(E0, nu, l, h, b);                       % local stiffness matrix
 rho = ones(nx, ny, nz);                                                    % unique solid material
 sK = KL(:) * rho(:)';                                                      % stiffness interpolation
 K = sparse(iK, jK, sK); K = (K + K')/2;                                    % assemblage of the stiffness matrix
@@ -201,7 +201,7 @@ Ab = invA * (identI - a * ab);
 KL = B * Ab;
 
 % Create an 18x18 matrix of zeros for the subvolume faces area
-S = zeros(18, 18); 
+S = zeros(18, 18);
 
 % Fill the first 6x6 block with b * h on the diagonal
 S(1:6, 1:6) = b * h * eye(6);
@@ -218,22 +218,41 @@ KL = S * KL;
 %% __________________________________________TIKHONOV REGULARIZATION SCHEME
 function Unew = Tikhonov(fdof, K, F)
 
+% Define tolerance
 tol = 1e-6;
+
+% Number of degrees of freedom 
 ndof = length(K);
-lambda = (1e-8) * trace(K) / ndof;
 
-U = zeros(ndof, 1);
-Knew = K + lambda * speye(ndof);
+% Initial regularization parameter
+lambda0 = 10.^(-8:-1:-12);
+lambda = lambda0 .* trace(K) / ndof;
+max_iter = length(lambda);
 
-error = 1; iter = 0;
-while error > tol
-    Unew = U;
-    Unew(fdof) = Knew(fdof, fdof) \ (F(fdof) + lambda * U(fdof));
-    if (iter > 0)
-        error = norm(Unew(fdof) - U(fdof)) / norm(Unew(fdof));
-        fprintf('Tikhonov iteration: %i,\t error: %e\n', iter, error);
-    end
+% Initialize variables
+U = zeros(ndof, 1); Unew = U;
+error = 1; iter = 1;
+
+while error > tol && iter <= max_iter
+   
+    % Tikhonov regularization
+    Knew = K + lambda(iter) * speye(ndof);
+    
+     % Solve the system of equations
+    Unew(fdof) = Knew(fdof, fdof) \ F(fdof);
+
+     % Compute the relative error
+    error = norm(K(fdof, fdof) * Unew(fdof) - F(fdof)) / norm(F(fdof));
+    
+    % Update the displacement vector
     U(fdof) = Unew(fdof);
+    
+     % Display iteration information
+    fprintf('Iteration: %i,\t lambda: %e,\t error: %e\n', iter, lambda(iter), error);
+
+    if (error <= tol)
+        break;
+    end
     iter = iter + 1;
 end
 fprintf('\n');
@@ -286,7 +305,7 @@ for k = 1:nz
             for m = 1:8
                 E = KinematicRelation(x(m), y(m), z(m));
                 val = C * E * Wi;
-                str(nodes(q, m), :) = str(nodes(q, m), :) + val';          
+                str(nodes(q, m), :) = str(nodes(q, m), :) + val';
             end
         end
     end
