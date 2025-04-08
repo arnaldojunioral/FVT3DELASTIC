@@ -42,9 +42,7 @@ elseif (strcmp(pb,'torsion'))
     F = sparse(dof(nx:nx:end, 5:6)', 1, load, ndof, 1);
 end
 
-%% FUNCTIONS
-
-% FINITE-VOLUME THEORY ANALYSIS
+%% ___________________________________________FINITE-VOLUME THEORY ANALYSIS
 [KL, ab, Ab, C] = LocalStiffMatrix(E0, nu, l, h, b);                       % local stiffness matrix
 rho = ones(nx, ny, nz);                                                    % unique solid material
 sK = KL(:) * rho(:)';                                                      % stiffness interpolation
