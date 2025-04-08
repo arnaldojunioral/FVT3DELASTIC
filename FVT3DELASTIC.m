@@ -1,7 +1,7 @@
-% A THREE_DIMENSIONAL FINITE-VOLUME THEORY CODE FOR STRESS ANALYSIS IN
+% A THREE-DIMENSIONAL FINITE-VOLUME THEORY CODE FOR STRESS ANALYSIS IN
 % CONTINUUM ELASTIC STRUCTURES
 
-function str = FVT3DELASTIC(nx, ny, nz)
+function FVT3DELASTIC(nx, ny, nz)
 %% ____________________________________________________________USER-DEFINED
 [L, H, B] = deal(500, 100, 100);                                           % Cantelever beam dimensions (mm)
 [E0, nu]  = deal(150e3, 0.3);                                              % material's Young modulus (N/mm2: MPa) and Poisson ratio
