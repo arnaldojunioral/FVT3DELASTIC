@@ -7,7 +7,7 @@ This repository provides a **free** MATLAB implementation of a three-dimensional
 * easy extension to other problems involving three-dimensional structural components.
 
 ## Installation
-https://github.com/arnaldojunioral/FVT3DELASTIC/blob/main/FVT3DELASTIC.m
+
 Save the FVT3DELASTIC.m program (18 kB) and launch MATLAB in the same directory. The program can be executed with the following command:
 
 $\color{blue}{\textbf{\texttt{function}}}$ **FVT3DELASTIC(nx, ny, nz)**
