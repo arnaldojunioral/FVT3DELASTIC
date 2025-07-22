@@ -25,7 +25,7 @@ The journal article uses the FVT3DELASTIC to generate the examples presented.
 
 #### Output
 
-<center> **Deformed structure** </center>\ 
+<center> Deformed structure </center> aa
 <img width="375" height="207" alt="image" src="https://github.com/user-attachments/assets/55c63898-61b3-42af-91ae-f9514570bcb1" />
 
 **Stress fields**\
