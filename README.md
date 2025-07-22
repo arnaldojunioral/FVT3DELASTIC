@@ -21,7 +21,7 @@ where **nx**, **ny**, and **nz** define the number of subvolumes along the x, y,
 
 
 #### Authors
-* Arnaldo dos Santos Júnior  [a link] arnaldojunioral@gmail.com
+* Arnaldo dos Santos Júnior  [a link]arnaldojunioral@gmail.com
 * Marcelo Victor Oliveira Araujo
 * Romildo Escarpini dos Santos Filho
 * Eduardo Nobre Lages
