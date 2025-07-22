@@ -14,6 +14,10 @@ $\color{blue}{\textbf{\texttt{function}}}$ **FVT3DELASTIC(nx, ny, nz)**
 
 where **nx**, **ny**, and **nz** define the number of subvolumes along the x, y, and z-directions, respectively. These parameters specify the discretization of the three-dimensional domain, as illustrated in the figure below.
 
+## Documentation
+
+
 ## Example: 3D Cantilever beam
 
 
+## Authors
