@@ -20,7 +20,7 @@ where **nx**, **ny**, and **nz** define the number of subvolumes along the x, y,
 ### Example: 3D Cantilever beam
 
 
-### Authors
+#### Authors
 * Arnaldo dos Santos Júnior
 * Marcelo Victor Oliveira Araujo
 * Romildo Escarpini dos Santos Filho
