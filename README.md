@@ -11,7 +11,7 @@ This repository provides a **free** MATLAB implementation of a three-dimensional
 Save the FVT3DELASTIC.m program (18 kB) and launch MATLAB in the same directory. The program can be executed with the following command:
 
 ```diff
-@@function in #1589F0@@ **FVT3DELASTIC(nx, ny, nz)**
+@@function in blue0@@ **FVT3DELASTIC(nx, ny, nz)**
 
 ## Example: 3D Cantilever beam
 
