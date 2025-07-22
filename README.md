@@ -19,8 +19,6 @@ where **nx**, **ny**, and **nz** define the number of subvolumes along the x, y,
 The journal article uses the FVT3DELASTIC to generate the examples presented.
 
 ### Example: 3D Cantilever beam
-
-**Model**\
 <img width="501" height="258" alt="image" src="https://github.com/user-attachments/assets/56962135-65c7-44d0-ba56-1cc5c18a9910" />
 
 **Parameters**
