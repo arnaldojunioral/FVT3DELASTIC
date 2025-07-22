@@ -6,7 +6,7 @@ This repository provides a **free** MATLAB implementation of a three-dimensional
 * direct control over stress and displacement fields through a local equilibrium-based formulation, and
 * easy extension to other problems involving three-dimensional structural components.
 
-### Installation
+### Getting started
 
 Save the FVT3DELASTIC.m program (17 kB) and launch MATLAB in the same directory. The program can be executed with the following command:
 
