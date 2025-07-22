@@ -23,6 +23,7 @@ The journal article uses the FVT3DELASTIC to generate the examples presented.
 
 **Parameters**
 
+This is a <sub>subscript</sub> text
 
 #### Output
 
