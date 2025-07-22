@@ -21,6 +21,10 @@ The journal article uses the FVT3DELASTIC to generate the examples presented.
 ### Example: 3D Cantilever beam
 
 
+
+<img width="2048" height="780" alt="image" src="https://github.com/user-attachments/assets/1a826ba6-0fc4-4749-b6d4-4bfef5d56534" />
+
+
 #### Authors
 
 Project developed by:
