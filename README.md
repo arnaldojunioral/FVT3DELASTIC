@@ -7,6 +7,6 @@ an efficient and flexible framework for conducting numerical investigations in s
 
 The main function can be called as follows: **function FVT3DELASTIC(nx, ny, nz)**
 
-**Example: 3D Cantilever beam** 
+## Example: 3D Cantilever beam
 
 
