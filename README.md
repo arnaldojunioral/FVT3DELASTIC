@@ -25,7 +25,7 @@ The journal article uses the FVT3DELASTIC to generate the examples presented.
 
 
 
-<img width="2048" height="780" alt="image" src="https://github.com/user-attachments/assets/1a826ba6-0fc4-4749-b6d4-4bfef5d56534" />
+<img width="1843" height="702" alt="image" src="https://github.com/user-attachments/assets/1a826ba6-0fc4-4749-b6d4-4bfef5d56534" />
 
 
 #### Authors
