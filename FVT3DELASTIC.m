@@ -1,4 +1,4 @@
-% A THREE_DIMENSIONAL FINITE-VOLUME THEORY CODE FOR STRESS ANALYSIS IN
+% A THREE-DIMENSIONAL FINITE-VOLUME THEORY CODE FOR STRESS ANALYSIS IN
 % CONTINUUM ELASTIC STRUCTURES
 
 function FVT3DELASTIC(nx, ny, nz)
@@ -133,8 +133,14 @@ E = [1, 0, 0, 3*x, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0;
 %% ____________LOCAL STIFFNESS MATRIX FOR ZEROTH ORDER FINITE VOLUME THEORY
 function [KL, ab, Ab, C0] = LocalStiffMatrix(E, nu, l, h, b)
 
-% Constitutive matrix
-C0 = constitutive_matrix(E, nu);
+% Constitutive matrix for 3D linear elasticity (isotropic)
+C0 = E / ((1+nu)*(1-2*nu)) * ...
+    [1-nu,  nu,    nu,    0,       0,       0;
+    nu,   1-nu,  nu,    0,       0,       0;
+    nu,   nu,    1-nu,  0,       0,       0;
+    0,    0,     0,     (1-2*nu)/2, 0,    0;
+    0,    0,     0,     0,  (1-2*nu)/2,   0;
+    0,    0,     0,     0,       0, (1-2*nu)/2];
 
 % Normal vectors
 N = zeros(18,36);
@@ -325,7 +331,6 @@ str = str ./ freq;
 %% ________________________________PLOT DEFORMED STRUCTURE AND STRESS FIELD
 function Plot3D(nx, ny, nz, l, h, b, nodes, u, amp, str, comp, rho)
 
-
 [Vertices, Faces] = MapIndices(nx, ny, nz, l, h, b, rho);
 [Deformed, stress] = StressAndDisplacement(nx, ny, nz, l, h, b, nodes, u, amp, str, rho);
 
@@ -458,16 +463,7 @@ end
 stress = stress(1:idV, :);
 Deformed = Deformed(1:idV, :);
 
-% Constitutive matrix for 3D linear elasticity (isotropic)
-function C = constitutive_matrix(E, nu)
-C = E / ((1+nu)*(1-2*nu)) * ...
-    [1-nu,  nu,    nu,    0,       0,       0;
-    nu,   1-nu,  nu,    0,       0,       0;
-    nu,   nu,    1-nu,  0,       0,       0;
-    0,    0,     0,     (1-2*nu)/2, 0,    0;
-    0,    0,     0,     0,  (1-2*nu)/2,   0;
-    0,    0,     0,     0,       0, (1-2*nu)/2];
-
+% Vertices coordinates of the subvolumes
 function coord = GenerateSubvolumeCoordinates(i, j, k, l, h, b)
 % Local vertex positions in reference cube
 vx = [0 1 1 0 0 1 1 0];
@@ -478,5 +474,5 @@ vz = [0 0 0 0 1 1 1 1];
 coord = [(i - 1 + vx') * l, ...
     (j - 1 + vy') * h, ...
     (k - 1 + vz') * b];
-
+    
 %% _____________________________________________________________________END
