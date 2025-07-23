@@ -17,6 +17,20 @@ where **nx**, **ny**, and **nz** define the number of subvolumes along the x<sub
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/3d92838e-2fcb-40f7-b0da-80d891ec62d6" />
 </p>
 
+### Input Parameters
+
+| Parameter       | Description                                          | Unit            | Example Value |
+|-----------------|------------------------------------------------------|------------------|----------------|
+| `L`             | Beam length                                          | mm               | 500            |
+| `H`             | Beam height                                          | mm               | 100            |
+| `B`             | Beam width                                           | mm               | 100            |
+| `E`             | Young's modulus (material stiffness)                 | MPa (N/mm²)      | 150e3          |
+| `nu`            | Poisson's ratio                                      | – (dimensionless)| 0.3            |
+| `P`             | Applied load (negative indicates downward force)     | N                | -2000          |
+| `pb`            | Load type: `'flexure'`, `'torsion'`, or `'torsion-flexure'` | –           | `'flexure'`    |
+| `amp`           | Amplification factor for deformation visualization   | –                | 1000           |
+
+
 <!-- ## Documentation -->
 
 <!-- The journal article uses the FVT3DELASTIC to generate the examples presented. -->
