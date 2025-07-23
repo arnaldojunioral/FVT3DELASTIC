@@ -14,8 +14,6 @@ $\color{blue}{\textbf{\texttt{function}}}$ **FVT3DELASTIC(nx, ny, nz)**
 
 where **nx**, **ny**, and **nz** define the number of subvolumes along the x<sub>1</sub>, x<sub>2</sub>, and x<sub>3</sub> directions, respectively. These parameters specify the discretization of the three-dimensional domain, as illustrated in the figure below.
 
-<img width="530" height="288" alt="image" src="https://github.com/user-attachments/assets/1a448f21-6b62-496e-b14b-01b4601c0733" />
-
 <img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/3d92838e-2fcb-40f7-b0da-80d891ec62d6" />
 
 
