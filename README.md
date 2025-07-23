@@ -6,7 +6,7 @@ This repository provides a **free** MATLAB implementation of a three-dimensional
 * direct control over stress and displacement fields through a local equilibrium-based formulation, and
 * easy extension to other problems involving three-dimensional structural components.
 
-### Getting started
+## Getting started
 
 Save the FVT3DELASTIC.m program (17 kB) and launch MATLAB in the same directory. The program can be executed with the following command:
 
@@ -17,11 +17,11 @@ where **nx**, **ny**, and **nz** define the number of subvolumes along the x<sub
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/3d92838e-2fcb-40f7-b0da-80d891ec62d6" />
 </p>
 
-### Documentation
+## Documentation
 
 The journal article uses the FVT3DELASTIC to generate the examples presented.
 
-### Example: 3D Cantilever beam
+## Example: 3D Cantilever beam
 <p align="center">
 <img width="501" height="258" alt="image" src="https://github.com/user-attachments/assets/56962135-65c7-44d0-ba56-1cc5c18a9910" />
 </p>
@@ -29,7 +29,7 @@ The journal article uses the FVT3DELASTIC to generate the examples presented.
 **Parameters**
 
 
-#### Output
+### Output
 <p align="center">
 <strong>Deformed structure</strong>
 </p>
@@ -44,7 +44,7 @@ The journal article uses the FVT3DELASTIC to generate the examples presented.
 <img width="900" height="300" alt="image" src="https://github.com/user-attachments/assets/1a826ba6-0fc4-4749-b6d4-4bfef5d56534" />
 </p>
 
-### Authors
+## Authors
 
 Project developed by:
 
