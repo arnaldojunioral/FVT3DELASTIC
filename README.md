@@ -70,7 +70,7 @@ This example presents a standard benchmark problem involving a three-dimensional
   </tr>
 </table>
 
-### Error Reporting
+## Error Reporting
 
 We strive to ensure that the implementation of the finite-volume theory is accurate, efficient, and well-documented. However, if you encounter unexpected behavior, inconsistencies, or potential bugs in the code, we welcome your feedback.
 
