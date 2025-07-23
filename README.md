@@ -10,7 +10,7 @@ This repository provides a **free** MATLAB implementation of a three-dimensional
 
 Save the FVT3DELASTIC.m program (17 kB) and launch MATLAB in the same directory. The program can be executed with the following command:
 
-$\color{blue}{\textbf{\texttt{function}}}$ **FVT3DELASTIC(nx, ny, nz)**
+**FVT3DELASTIC(nx, ny, nz)**
 
 where **nx**, **ny**, and **nz** define the number of subvolumes along the x<sub>1</sub>, x<sub>2</sub>, and x<sub>3</sub> directions, respectively. These parameters specify the discretization of the three-dimensional domain, as illustrated in the figure below.
 <p align="center">
