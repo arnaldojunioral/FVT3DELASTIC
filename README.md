@@ -26,7 +26,7 @@ The table below summarizes the key input parameters used in the simulation, incl
 | `L`             | Beam length                                          | mm               |
 | `H`             | Beam height                                          | mm               |
 | `B`             | Beam width                                           | mm               |
-| `E`             | Young's modulus (material stiffness)                 | MPa              |
+| `E`             | Young's modulus (material stiffness)                 | GPa              |
 | `nu`            | Poisson's ratio                                      | –                |
 | `P`             | Applied load (negative indicates downward force)     | N                |
 | `pb`            | `Problem: `'flexure'`, `'torsion'`, or `'torsion-flexure'` | –          |
@@ -38,12 +38,25 @@ The table below summarizes the key input parameters used in the simulation, incl
 <!-- The journal article uses the FVT3DELASTIC to generate the examples presented. -->
 
 ## Example: 3D Cantilever beam
+
+The first example features a cantilever beam, with the analysis domain and boundary conditions illustrated in the figure below.
+
 <p align="center">
 <img width="501" height="258" alt="image" src="https://github.com/user-attachments/assets/56962135-65c7-44d0-ba56-1cc5c18a9910" />
 </p>
 
-**Parameters**
+The beam dimensions are defined as:
 
+- Length, \( L = 500 \) mm  
+- Height, \( H = 100 \) mm  
+- Width, \( B = 100 \) mm  
+
+Material properties used in the analysis are:
+
+- Young’s modulus, \( E = 150 \) GPa  
+- Poisson’s ratio, \( \nu = 0.3 \)  
+
+An applied load of \( P = 2000 \) N is considered in the simulation.
 
 ### Output
 <p align="center">
