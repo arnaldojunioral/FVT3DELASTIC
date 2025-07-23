@@ -30,8 +30,9 @@ The journal article uses the FVT3DELASTIC to generate the examples presented.
 
 
 #### Output
-
-Deformed structure\
+<p align="center">
+Deformed structure
+</p>
 <p align="center">
 <img width="375" height="207" alt="image" src="https://github.com/user-attachments/assets/55c63898-61b3-42af-91ae-f9514570bcb1" />
 </p>
