@@ -14,7 +14,7 @@ $\color{blue}{\textbf{\texttt{function}}}$ **FVT3DELASTIC(nx, ny, nz)**
 
 where **nx**, **ny**, and **nz** define the number of subvolumes along the x<sub>1</sub>, x<sub>2</sub>, and x<sub>3</sub> directions, respectively. These parameters specify the discretization of the three-dimensional domain, as illustrated in the figure below.
 <p align="center">
-<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/3d92838e-2fcb-40f7-b0da-80d891ec62d6" />
+<img width="350" height="350" alt="image" src="https://github.com/user-attachments/assets/3d92838e-2fcb-40f7-b0da-80d891ec62d6" />
 </p>
 
 The table below summarizes the key input parameters used in the simulation, including beam geometry, material properties, loading conditions, and visualization settings.
