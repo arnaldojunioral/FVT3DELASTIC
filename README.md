@@ -38,7 +38,7 @@ Deformed structure\
 
 Stress fields\
 <p align="center">
-<img width="944" height="360" alt="image" src="https://github.com/user-attachments/assets/1a826ba6-0fc4-4749-b6d4-4bfef5d56534" />
+<img width="900" height="300" alt="image" src="https://github.com/user-attachments/assets/1a826ba6-0fc4-4749-b6d4-4bfef5d56534" />
 </p>
 
 ### Authors
