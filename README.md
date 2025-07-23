@@ -19,7 +19,6 @@ where **nx**, **ny**, and **nz** define the number of subvolumes along the x<sub
 
 The table below summarizes the key input parameters used in the simulation, including beam geometry, material properties, loading conditions, and visualization settings.
 
-<p align="center">
 #### Model Parameters
 
 | Parameter       | Description                                          | Unit             |
@@ -32,7 +31,6 @@ The table below summarizes the key input parameters used in the simulation, incl
 | `P`             | Applied load (negative indicates downward force)     | N                |
 | `pb`            | `Problem: `'flexure'`, `'torsion'`, or `'torsion-flexure'` | –          |
 | `amp`           | Amplification factor for deformation visualization   | –                | 
-</p>
 
 <!-- ## Documentation -->
 
