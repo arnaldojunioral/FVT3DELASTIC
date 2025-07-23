@@ -29,7 +29,7 @@ The table below summarizes the key input parameters used in the simulation, incl
 | `E`             | Young's modulus (material stiffness)                 | GPa              |
 | `nu`            | Poisson's ratio                                      | –                |
 | `P`             | Applied load (negative indicates downward force)     | N                |
-| `pb`            | `Problem: `'flexure'`, `'torsion'`, or `'torsion-flexure'` | –          |
+| `pb`            | `Problem: `'flexure'`, `'torsion'`, or `'torsion-flexure' | –          |
 | `amp`           | Amplification factor for deformation visualization   | –                | 
 
 <!-- ## Documentation -->
