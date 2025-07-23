@@ -53,7 +53,7 @@ The beam dimensions are defined as:
 Material properties used in the analysis are:
 
 - Young’s modulus, \( E = 150 \) GPa  
-- Poisson’s ratio, \( \nu = 0.3 \)  
+- Poisson’s ratio, \( nu = 0.3 \)  
 
 An applied load of \( P = 2000 \) N is considered in the simulation.
 
