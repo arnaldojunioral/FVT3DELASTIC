@@ -16,6 +16,7 @@ where **nx**, **ny**, and **nz** define the number of subvolumes along the x<sub
 <p align="center">
 <img width="350" height="350" alt="image" src="https://github.com/user-attachments/assets/3d92838e-2fcb-40f7-b0da-80d891ec62d6" />
 </p>
+
 The table below summarizes the key input parameters used in the simulation, including beam geometry, material properties, loading conditions, and visualization settings.
 
 #### Model Parameters
@@ -78,3 +79,15 @@ Project developed by:
 * Romildo dos Santos Escarpini Filho romildo.escarpini@penedo.ufal.br
 * Eduardo Nobre Lages enl@ctec.ufal.br
 * Márcio André Araujo Cavalcante marcio.cavalcante@ceca.ufal.br
+
+## Key References
+
+The following table summarizes the five relevant references supporting the development of the proposed three-dimensional finite-volume theory. These works were selected based on their conceptual alignment with the present formulation, their methodological contributions, and their scientific impact.
+
+| Rank | Reference                                                                                          | Relevance to the Study      | Scientific Impact | Justification                                                                                                                                                  |
+|------|----------------------------------------------------------------------------------------------------|-----------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1    | Cavalcante, M.A.A., Pindera, M.-J. (2012a,b). *Generalized finite-volume theory for elastic analysis in solid mechanics* (Parts I & II). J. Appl. Mech. | ⭐⭐⭐⭐⭐ | High              | Serves as the primary foundation for the present formulation. These papers established the generalized FVT framework and addressed key numerical challenges.     |
+| 2    | Bansal, Y., Pindera, M.-J. (2003, 2005). Reformulated higher-order theory for periodic multiphase materials. | ⭐⭐⭐⭐⭐ | High              | Provides the theoretical basis for the discretization and stiffness matrix strategies adopted in this work, particularly for heterogeneous and periodic media.    |
+| 3    | Zhong, Y., Bansal, Y., Pindera, M.-J. (2004). *Efficient reformulation of the thermal higher-order theory for FGMs.* | ⭐⭐⭐⭐☆ | Medium            | Offers important methodological insights relevant to extending the FVT to three-dimensional domains with variable material properties.                          |
+| 4    | Cardiff, P., Demirdžić, I. (2021). *Thirty years of the finite volume method for solid mechanics.* Arch. Comput. Methods Eng. | ⭐⭐⭐⭐☆ | Very High         | A comprehensive review that situates the present study within the broader evolution of finite-volume methods in solid mechanics.                                 |
+| 5    | Araujo, M.V.O., Lages, E.N., Cavalcante, M.A.A. (2020a, 2021). Applications of FVT in topology optimization and structural energy analysis. | ⭐⭐⭐⭐☆ | Medium            | Demonstrates the practical applicability of FVT to topology optimization and validates the versatility of the formulation for linear elastic structures.         |
