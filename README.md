@@ -80,7 +80,7 @@ Project developed by:
 * Eduardo Nobre Lages enl@ctec.ufal.br
 * Márcio André Araujo Cavalcante marcio.cavalcante@ceca.ufal.br
 
-## Key References
+## References
 
 The following table summarizes the five relevant references supporting the development of the proposed three-dimensional finite-volume theory. These works were selected based on their conceptual alignment with the present formulation, their methodological contributions, and their scientific impact.
 
