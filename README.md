@@ -38,7 +38,7 @@ The table below summarizes the key input parameters used in the simulation, incl
 
 ## Example: 3D Cantilever beam
 
-The example features a three-dimensional cantilever beam, with the analysis domain and boundary conditions illustrated in the figure below. This setup is a standard benchmark problem used to verify the functionality of the FVT3DELASTIC code.
+This example presents a standard benchmark problem involving a three-dimensional cantilever beam. The analysis domain and boundary conditions, shown in the figure below, are used to verify the functionality of the FVT3DELASTIC code.
 
 <p align="center">
 <img width="400" height="206" alt="image" src="https://github.com/user-attachments/assets/56962135-65c7-44d0-ba56-1cc5c18a9910" />
