@@ -37,7 +37,9 @@ The journal article uses the FVT3DELASTIC to generate the examples presented.
 <img width="375" height="207" alt="image" src="https://github.com/user-attachments/assets/55c63898-61b3-42af-91ae-f9514570bcb1" />
 </p>
 
-Stress fields\
+<p align="center">
+<strong>Stress fields</strong>
+</p>
 <p align="center">
 <img width="900" height="300" alt="image" src="https://github.com/user-attachments/assets/1a826ba6-0fc4-4749-b6d4-4bfef5d56534" />
 </p>
