@@ -17,6 +17,8 @@ where **nx**, **ny**, and **nz** define the number of subvolumes along the x<sub
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/3d92838e-2fcb-40f7-b0da-80d891ec62d6" />
 </p>
 
+The table below summarizes the key input parameters used in the simulation, including beam geometry, material properties, loading conditions, and visualization settings.
+
 ### Input Parameters
 
 | Parameter       | Description                                          | Unit             |
