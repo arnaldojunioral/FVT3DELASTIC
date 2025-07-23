@@ -27,7 +27,7 @@ where **nx**, **ny**, and **nz** define the number of subvolumes along the x<sub
 | `E`             | Young's modulus (material stiffness)                 | MPa              |
 | `nu`            | Poisson's ratio                                      | –                |
 | `P`             | Applied load (negative indicates downward force)     | N                |
-| `pb`            | `roblem type: `'flexure'`, `'torsion'`, or `'torsion-flexure'` | –      |
+| `pb`            | `Problem: `'flexure'`, `'torsion'`, or `'torsion-flexure'` | –          |
 | `amp`           | Amplification factor for deformation visualization   | –                | 
 
 
