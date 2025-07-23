@@ -44,6 +44,18 @@ This example presents a standard benchmark problem involving a three-dimensional
 <img width="400" height="206" alt="image" src="https://github.com/user-attachments/assets/56962135-65c7-44d0-ba56-1cc5c18a9910" />
 </p>
 
+| Parameter               | Symbol | Value     | Unit    |
+|-------------------------|--------|-----------|---------|
+| **Beam Length**         | L      | 500       | mm      |
+| **Beam Height**         | H      | 100       | mm      |
+| **Beam Width**          | B      | 100       | mm      |
+| **Young’s Modulus**     | E      | 150       | GPa     |
+| **Poisson’s Ratio**     | ν      | 0.3       | —       |
+| **Applied Load**        | P      | 2000      | N       |
+| **Problem Type**        | pb     | 'flexure' | —       |
+| **Deformation Amplification** | amp    | 1e3       | —       |
+
+
 The beam dimensions are defined as:
 
 - Length, \( L = 500 \) mm  
