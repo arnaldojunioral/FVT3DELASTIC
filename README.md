@@ -26,7 +26,7 @@ The table below summarizes the key input parameters used in the simulation, incl
 | `L`             | Beam length                                          | mm               |
 | `H`             | Beam height                                          | mm               |
 | `B`             | Beam width                                           | mm               |
-| `E`             | Young's modulus (material stiffness)                 | GPa              |
+| `E`             | Young's modulus (material stiffness)                 | MPa              |
 | `nu`            | Poisson's ratio                                      | –                |
 | `P`             | Applied load (negative indicates downward force)     | N                |
 | `pb`            | `Problem: `'flexure'`, `'torsion'`, or `'torsion-flexure' | –          |
@@ -49,7 +49,7 @@ This example presents a standard benchmark problem involving a three-dimensional
 | **Beam Length**         | L      | 500       | mm      |
 | **Beam Height**         | H      | 100       | mm      |
 | **Beam Width**          | B      | 100       | mm      |
-| **Young’s Modulus**     | E      | 150       | GPa     |
+| **Young’s Modulus**     | E      | 150e3     | MPa     |
 | **Poisson’s Ratio**     | ν      | 0.3       | —       |
 | **Applied Load**        | P      | 2000      | N       |
 | **Problem Type**        | pb     | 'flexure' | —       |
