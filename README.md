@@ -22,7 +22,9 @@ where **nx**, **ny**, and **nz** define the number of subvolumes along the x<sub
 The journal article uses the FVT3DELASTIC to generate the examples presented.
 
 ### Example: 3D Cantilever beam
+<p align="center">
 <img width="501" height="258" alt="image" src="https://github.com/user-attachments/assets/56962135-65c7-44d0-ba56-1cc5c18a9910" />
+</p>
 
 **Parameters**
 
@@ -30,11 +32,14 @@ The journal article uses the FVT3DELASTIC to generate the examples presented.
 #### Output
 
 Deformed structure\
+<p align="center">
 <img width="375" height="207" alt="image" src="https://github.com/user-attachments/assets/55c63898-61b3-42af-91ae-f9514570bcb1" />
+</p>
 
 Stress fields\
+<p align="center">
 <img width="1180" height="450" alt="image" src="https://github.com/user-attachments/assets/1a826ba6-0fc4-4749-b6d4-4bfef5d56534" />
-
+</p>
 
 ### Authors
 
