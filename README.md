@@ -61,7 +61,7 @@ Problem type: \(pb = 'flexure' \)
 
 Deformation amplification: \(amp = 1e3 \)
 
-### Output
+#### Output
 
 <table align="center">
   <tr>
