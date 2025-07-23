@@ -19,16 +19,16 @@ where **nx**, **ny**, and **nz** define the number of subvolumes along the x<sub
 
 ### Input Parameters
 
-| Parameter       | Description                                          | Unit            | Example Value |
-|-----------------|------------------------------------------------------|------------------|----------------|
-| `L`             | Beam length                                          | mm               | 500            |
-| `H`             | Beam height                                          | mm               | 100            |
-| `B`             | Beam width                                           | mm               | 100            |
-| `E`             | Young's modulus (material stiffness)                 | MPa (N/mm²)      | 150e3          |
-| `nu`            | Poisson's ratio                                      | – (dimensionless)| 0.3            |
-| `P`             | Applied load (negative indicates downward force)     | N                | -2000          |
-| `pb`            | Load type: `'flexure'`, `'torsion'`, or `'torsion-flexure'` | –           | `'flexure'`    |
-| `amp`           | Amplification factor for deformation visualization   | –                | 1000           |
+| Parameter       | Description                                          | Unit             |
+|-----------------|------------------------------------------------------|------------------|
+| `L`             | Beam length                                          | mm               |
+| `H`             | Beam height                                          | mm               |
+| `B`             | Beam width                                           | mm               |
+| `E`             | Young's modulus (material stiffness)                 | MPa              |
+| `nu`            | Poisson's ratio                                      | –                |
+| `P`             | Applied load (negative indicates downward force)     | N                |
+| `pb`            | `roblem type: `'flexure'`, `'torsion'`, or `'torsion-flexure'` | –      |
+| `amp`           | Amplification factor for deformation visualization   | –                | 
 
 
 <!-- ## Documentation -->
