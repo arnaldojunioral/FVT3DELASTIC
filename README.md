@@ -69,7 +69,7 @@ Deformation amplification: \(amp = 1e3 \)
       <img width="375" height="207" alt="Deformed structure" src="https://github.com/user-attachments/assets/55c63898-61b3-42af-91ae-f9514570bcb1" />
     </td>
     <td align="center"><strong>Stress fields</strong><br>
-      <img width="375" height="138" alt="Stress fields" src="https://github.com/user-attachments/assets/1a826ba6-0fc4-4749-b6d4-4bfef5d56534" />
+      <img width="900" height="300" alt="Stress fields" src="https://github.com/user-attachments/assets/1a826ba6-0fc4-4749-b6d4-4bfef5d56534" />
     </td>
   </tr>
 </table>
