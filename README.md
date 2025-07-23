@@ -59,7 +59,7 @@ An applied load of \( P = 2000 \) N is considered in the simulation.
 
 Problem type: \(pb = 'flexure' \)
 
-Deformed amplification: \(amp = 1e3 \)
+Deformation amplification: \(amp = 1e3 \)
 
 ### Output
 <p align="center">
