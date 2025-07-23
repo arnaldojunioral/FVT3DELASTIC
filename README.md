@@ -55,24 +55,6 @@ This example presents a standard benchmark problem involving a three-dimensional
 | **Problem Type**        | pb     | 'flexure' | —       |
 | **Deformation Amplification** | amp    | 1e3       | —       |
 
-
-The beam dimensions are defined as:
-
-- Length, \( L = 500 \) mm  
-- Height, \( H = 100 \) mm  
-- Width, \( B = 100 \) mm  
-
-Material properties used in the analysis are:
-
-- Young’s modulus, \( E = 150 \) GPa  
-- Poisson’s ratio, \( nu = 0.3 \)  
-
-An applied load of \( P = 2000 \) N is considered in the simulation.
-
-Problem type: \(pb = 'flexure' \)
-
-Deformation amplification: \(amp = 1e3 \)
-
 #### Output
 
 <table align="center">
