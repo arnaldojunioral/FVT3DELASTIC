@@ -26,14 +26,14 @@ The table below summarizes the key input parameters used in the simulation, incl
 
 | Parameter       | Description                                          | Unit             |
 |-----------------|------------------------------------------------------|------------------|
-| `L`             | Beam length                                          | mm               |
-| `H`             | Beam height                                          | mm               |
-| `B`             | Beam width                                           | mm               |
-| `E`             | Young's modulus (material stiffness)                 | MPa              |
-| `nu`            | Poisson's ratio                                      | –                |
-| `P`             | Applied load (negative indicates downward force)     | N                |
-| `pb`            | `Problem: `'flexure'`, `'torsion'`, or `'torsion-flexure' | –          |
-| `amp`           | Amplification factor for deformation visualization   | –                | 
+| L             | Beam length                                          | mm               |
+| H             | Beam height                                          | mm               |
+| B             | Beam width                                           | mm               |
+| E             | Young's modulus (material stiffness)                 | MPa              |
+| nu            | Poisson's ratio                                      | –                |
+| P             | Applied load (negative indicates downward force)     | N                |
+| pb            | `Problem: `'flexure'`, `'torsion'`, or `'torsion-flexure' | –          |
+| amp           | Amplification factor for deformation visualization   | –                | 
 
 <!-- ## Documentation -->
 
