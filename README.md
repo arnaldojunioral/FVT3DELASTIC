@@ -8,7 +8,7 @@ This repository provides a **free** MATLAB implementation of a three-dimensional
 
 ## Getting started
 
-Save the FVT3DELASTIC.m https://github.com/arnaldojunioral/FVT3DELASTIC/blob/202e86aee5eb24578bcf3106b9e2604819c80d33/FVT3DELASTIC.m program (17 kB) and launch MATLAB in the same directory. The program can be executed with the following command:
+Save the FVT3DELASTIC.m [⬇️ Download FVT3DELASTIC.m](https://raw.githubusercontent.com/arnaldojunioral/FVT3DELASTIC/main/FVT3DELASTIC.m) program (17 kB) and launch MATLAB in the same directory. The program can be executed with the following command:
 
 **FVT3DELASTIC(nx, ny, nz)**
 
