@@ -47,16 +47,9 @@ This example presents a standard benchmark problem involving a three-dimensional
 <img width="400" height="206" alt="image" src="https://github.com/user-attachments/assets/56962135-65c7-44d0-ba56-1cc5c18a9910" />
 </p>
 
-| Parameter | Value  |
-|-----------|--------|
-| L      | 500       |
-| H      | 100       |
-| B      | 100       |
-|  E     | 150000    |
-|  ν     | 0.3       |
-|  P     | 2000      |
-| pb     | 'flexure' |
-| amp    | 1000      |
+| L   | H   | B   | E      | ν   | P    | pb       | amp   |
+|-----|-----|-----|--------|-----|------|----------|-------|
+| 500 | 100 | 100 | 150000 | 0.3 | 2000 | flexure  | 1000  |
 
 #### Output
 
