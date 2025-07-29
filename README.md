@@ -49,7 +49,11 @@ This example presents a standard benchmark problem involving a three-dimensional
 
 | L   | H   | B   | E      | ν   | P    | pb       | amp   |
 |-----|-----|-----|--------|-----|------|----------|-------|
-| 500 | 100 | 100 | 150000 | 0.3 | 2000 | flexure  | 1000  |
+| 500 | 100 | 100 | 150000 | 0.3 | 2000 | 'flexure'  | 1000  |
+
+|  L   |  H   |  B   |   E    |  ν   |  P   |   pb    | amp  |
+|:---:|:---:|:---:|:------:|:---:|:---:|:------:|:----:|
+| 500 | 100 | 100 | 150000 | 0.3 | 2000 | flexure | 1000 |
 
 #### Output
 
