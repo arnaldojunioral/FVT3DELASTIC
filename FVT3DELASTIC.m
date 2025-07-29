@@ -1,7 +1,7 @@
 % A THREE-DIMENSIONAL FINITE-VOLUME THEORY CODE FOR STRESS ANALYSIS IN
 % CONTINUUM ELASTIC STRUCTURES
 
-function FVT3DELASTIC(nx, ny, nz)
+function FVT3DELASTIC(n1, n2, n3)
 %% ____________________________________________________________USER-DEFINED
 [L, H, B] = deal(500, 100, 100);                                           % Cantelever beam dimensions (mm)
 [E, nu]  = deal(150e3, 0.3);                                               % material's Young modulus (N/mm2: MPa) and Poisson's ratio
@@ -9,19 +9,19 @@ P  = -2e3;                                                                 % app
 [pb, amp] = deal('flexure', 1e3);                                          % pb: 'flexure', 'torsion', 'torsion-flexure'; amp: deformation amplification
 
 %% _____________________________________________________BOUNDARY CONDITIONS
-[l, h, b] = deal(L/nx, H/ny, B/nz);                                        % subvolume dimensions
-[nodes, dof, ndof, iK, jK] = DOFassembly(nx, ny, nz);                      % degrees of freedom
+[l, h, b] = deal(L/n1, H/n2, B/n3);                                        % subvolume dimensions
+[nodes, dof, ndof, iK, jK] = DOFassembly(n1, n2, n3);                      % degrees of freedom
 
 % Essential boundary conditions
-supp = unique(dof(1:nx:end, 1:3));                                         % fixed DOFs at x = 0
+supp = unique(dof(1:n1:end, 1:3));                                         % fixed DOFs at x = 0
 fdof = setdiff(dof(:), supp(:));                                           % free DOFs
 
 % Default: full material
-rho = ones(nx, ny, nz);
+rho = ones(n1, n2, n3);
 
 switch pb
     case 'flexure'
-        F = sparse(dof(nx:nx:end, 5), 1, P / (ny * nz), ndof, 1);          % Load in y-direction
+        F = sparse(dof(n1:n1:end, 5), 1, P / (n2 * n3), ndof, 1);          % Load in y-direction
         cp = [1, 6];                                                       % sigma_11 and sigma_12
 
     case 'torsion'
@@ -32,12 +32,12 @@ switch pb
         J = (B * H / 12) * (B^2 + H^2);
         val = P / J * b * h;
 
-        [jpos, kpos] = meshgrid(0:ny-1, 0:nz-1);
+        [jpos, kpos] = meshgrid(0:n2-1, 0:n3-1);
         y = jpos(:) * h - H/2 + h/2;
         z = kpos(:) * b - B/2 + b/2;
 
         load = reshape([-val * y, val * z]', [], 1);
-        F = sparse(dof(nx:nx:end, 5:6)', 1, load, ndof, 1);                % Load in y and z directions
+        F = sparse(dof(n1:n1:end, 5:6)', 1, load, ndof, 1);                % Load in y and z directions
         cp = [5, 6];                                                       % sigma_13 and sigma_12
 
     case 'torsion-flexure'
@@ -49,9 +49,9 @@ switch pb
         rho(:, t_y+1:end-t_y, t_z+1:end) = 1e-6;  % inner region set to minimum density
 
         % Identify subvolumes with material at the face x = L
-        mask = squeeze(rho(nx, :, :) > 1e-5);                              % material presence at last x-slice
+        mask = squeeze(rho(n1, :, :) > 1e-5);                              % material presence at last x-slice
         [j, k] = find(mask);
-        sv = sub2ind([nx, ny, nz], nx * ones(size(j)), j, k);              % linear indices of solid subvolumes
+        sv = sub2ind([n1, n2, n3], n1 * ones(size(j)), j, k);              % linear indices of solid subvolumes
 
         F = sparse(ndof, 1);
         F(dof(sv, 5)) = P / numel(sv);                                     % Load in y-direction
@@ -68,49 +68,49 @@ end
 sK = KL(:) * rho(:)';                                                      % stiffness interpolation
 K = sparse(iK, jK, sK); K = (K + K')/2;                                    % assemblage of the stiffness matrix
 U = Tikhonov(fdof, K, F);                                                  % compute global displacements employing Tikhonov strategy
-[u, str] = NodalResponse(nx, ny, nz, l, h, b, ab, Ab, C, nodes, dof, U, rho);   % compute nodal displacements and stress fields
+[u, str] = NodalResponse(n1, n2, n3, l, h, b, ab, Ab, C, nodes, dof, U, rho);   % compute nodal displacements and stress fields
 
 % PLOT DEFORMED STRUCTURE AND STRESS FIELDS
-Plot3D(nx, ny, nz, l, h, b, nodes, u, amp, str, cp, rho);
+Plot3D(n1, n2, n3, l, h, b, nodes, u, amp, str, cp, rho);
 
 %% _____________________________________________ORDENING DEGREES OF FREEDOM
-function [nodes, dof, ndof, iK, jK] = DOFassembly(nx, ny, nz)
+function [nodes, dof, ndof, iK, jK] = DOFassembly(n1, n2, n3)
 
 % Indices for subvolumes:
-[i, j, k] = ndgrid(1:nx, 1:ny, 1:nz);
+[i, j, k] = ndgrid(1:n1, 1:n2, 1:n3);
 
 % Compute the base index for node positioning
-base = (j - 1) * ((nx + 1) * (nz + 1)) + (k - 1) * (nx + 1);
+base = (j - 1) * ((n1 + 1) * (n3 + 1)) + (k - 1) * (n1 + 1);
 
 % Compute the node indices efficiently in a vectorized manner
 nodes = [i(:)   + base(:), ...                                             % Node 1
     i(:)+1 + base(:), ...                                                  % Node 2
-    i(:)+1 + (j(:) * ((nx+1) * (nz+1))) + (k(:) - 1) * (nx+1), ...         % Node 3
-    i(:)   + (j(:) * ((nx+1) * (nz+1))) + (k(:) - 1) * (nx+1), ...         % Node 4
-    i(:)   + base(:) + (nx+1), ...                                         % Node 5
-    i(:)+1 + base(:) + (nx+1), ...                                         % Node 6
-    i(:)+1 + (j(:) * ((nx+1) * (nz+1))) + k(:) * (nx+1), ...               % Node 7
-    i(:)   + (j(:) * ((nx+1) * (nz+1))) + k(:) * (nx+1)];                  % Node 8
+    i(:)+1 + (j(:) * ((n1+1) * (n3+1))) + (k(:) - 1) * (n1+1), ...         % Node 3
+    i(:)   + (j(:) * ((n1+1) * (n3+1))) + (k(:) - 1) * (n1+1), ...         % Node 4
+    i(:)   + base(:) + (n1+1), ...                                         % Node 5
+    i(:)+1 + base(:) + (n1+1), ...                                         % Node 6
+    i(:)+1 + (j(:) * ((n1+1) * (n3+1))) + k(:) * (n1+1), ...               % Node 7
+    i(:)   + (j(:) * ((n1+1) * (n3+1))) + k(:) * (n1+1)];                  % Node 8
 
 % Number of horizontal faces:
-Nhf = nx * nz * (ny + 1);
+Nhf = n1 * n3 * (n2 + 1);
 
 % Number of vertical faces in the x-direction:
-Nvfx = (nx + 1) * nz * ny;
+Nvfx = (n1 + 1) * n3 * n2;
 
 % Subvolume faces:
-fc1 = Nhf + i(:) + (k(:) - 1) * (nx + 1) + (j(:) - 1) * nz * (nx + 1);     % Left lateral face
-fc2 = Nhf + i(:) + 1 + (k(:) - 1) * (nx + 1) + (j(:) - 1) * nz * (nx + 1); % Right lateral face
-fc3 = i(:) + (k(:) - 1) * nx + (j(:) - 1) * nx * nz;                       % Bottom face
-fc4 = i(:) + (k(:) - 1) * nx + j(:) * nx * nz;                             % Top face
-fc5 = Nhf + Nvfx + i(:) + (k(:) - 1) * nx + (j(:) - 1) * nx * (nz + 1);    % Back face
-fc6 = Nhf + Nvfx + i(:) + k(:) * nx + (j(:) - 1) * nx * (nz + 1);          % Front face
+fc1 = Nhf + i(:) + (k(:) - 1) * (n1 + 1) + (j(:) - 1) * n3 * (n1 + 1);     % Left lateral face
+fc2 = Nhf + i(:) + 1 + (k(:) - 1) * (n1 + 1) + (j(:) - 1) * n3 * (n1 + 1); % Right lateral face
+fc3 = i(:) + (k(:) - 1) * n1 + (j(:) - 1) * n1 * n3;                       % Bottom face
+fc4 = i(:) + (k(:) - 1) * n1 + j(:) * n1 * n3;                             % Top face
+fc5 = Nhf + Nvfx + i(:) + (k(:) - 1) * n1 + (j(:) - 1) * n1 * (n3 + 1);    % Back face
+fc6 = Nhf + Nvfx + i(:) + k(:) * n1 + (j(:) - 1) * n1 * (n3 + 1);          % Front face
 
 % Final combination of faces:
 faces = [fc1, fc2, fc3, fc4, fc5, fc6];
 
-% Degrees of fereedom
-dof = zeros(nx * ny * nz, 18);
+% Degrees of freedom
+dof = zeros(n1 * n2 * n3, 18);
 dof(:, 1:3:16) = 3 * faces - 2;
 dof(:, 2:3:17) = 3 * faces - 1;
 dof(:, 3:3:18) = 3 * faces;
@@ -267,7 +267,7 @@ end
 fprintf('\n');
 
 %% ____________________________COMPUTE NODAL DISPLACEMENTS AND STRESS FIELD
-function [u, str] = NodalResponse(nx, ny, nz, l, h, b, ab, Ab, C, nodes, dof, U, rho)
+function [u, str] = NodalResponse(n1, n2, n3, l, h, b, ab, Ab, C, nodes, dof, U, rho)
 
 % Number of nodes
 nnodes = numel(unique(nodes(:)));
@@ -276,7 +276,7 @@ nnodes = numel(unique(nodes(:)));
 u = zeros(nnodes, 3);
 str = zeros(nnodes, 6);
 
-% Local coordinates for each node within an subvolume
+% Local coordinates for each node within a subvolume
 x = [-1, 1, 1, -1, -1, 1, 1, -1] * 0.5 * l;
 y = [-1, -1, 1, 1, -1, -1, 1, 1] * 0.5 * h;
 z = [-1, -1, -1, -1, 1, 1, 1, 1] * 0.5 * b;
@@ -287,11 +287,11 @@ cy = 0.5 * (3 * (y.^2) - h^2 / 4);
 cz = 0.5 * (3 * (z.^2) - b^2 / 4);
 
 % Loop over subvolumes
-for k = 1:nz
-    for j = 1:ny
-        for i = 1:nx
+for k = 1:n3
+    for j = 1:n2
+        for i = 1:n1
             % Subvolume index
-            q = i + (j - 1) * nx + (k - 1) * nx * ny;
+            q = i + (j - 1) * n1 + (k - 1) * n1 * n2;
 
             % Coefficients of the displacement field
             W0 = ab * U(dof(q, :));                                        % Zeroth-order coefficients
@@ -329,10 +329,10 @@ u = u ./ freq;
 str = str ./ freq;
 
 %% ________________________________PLOT DEFORMED STRUCTURE AND STRESS FIELD
-function Plot3D(nx, ny, nz, l, h, b, nodes, u, amp, str, comp, rho)
+function Plot3D(n1, n2, n3, l, h, b, nodes, u, amp, str, comp, rho)
 
-[Vertices, Faces] = MapIndices(nx, ny, nz, l, h, b, rho);
-[Deformed, stress] = StressAndDisplacement(nx, ny, nz, l, h, b, nodes, u, amp, str, rho);
+[Vertices, Faces] = MapIndices(n1, n2, n3, l, h, b, rho);
+[Deformed, stress] = StressAndDisplacement(n1, n2, n3, l, h, b, nodes, u, amp, str, rho);
 
 % Swap columns [2 3] function
 sw = @(V) V(:, [1 3 2]);
@@ -372,10 +372,10 @@ for i = 1:numel(comp)
 end
 
 % Mapping face's and vertice's indices
-function [Vertices, Faces] = MapIndices(nx, ny, nz, l, h, b, rho)
+function [Vertices, Faces] = MapIndices(n1, n2, n3, l, h, b, rho)
 
 % Total number of subvolumes
-nsv = nx * ny * nz;
+nsv = n1 * n2 * n3;
 
 % Local face definitions (relative to the 8 nodes of an subvolume)
 local_faces = [1,5,8,4; 2,6,7,3; 1,2,6,5; 4,3,7,8; 1,4,3,2; 5,8,7,6];
@@ -389,9 +389,9 @@ idV = 0;
 idF = 0;
 
 % Iterate through the 3D grid to compute deformed geometry
-for k = 1:nz
-    for j = 1:ny
-        for i = 1:nx
+for k = 1:n3
+    for j = 1:n2
+        for i = 1:n1
 
             % Compute subvolume vertices
             coord = GenerateSubvolumeCoordinates(i, j, k, l, h, b);
@@ -414,10 +414,10 @@ end
 Vertices = Vertices(1:idV, :);
 Faces = Faces(1:idF, :);
 
-function [Deformed, stress] = StressAndDisplacement(nx, ny, nz, l, h, b, nodes, u, amp, str, rho)
+function [Deformed, stress] = StressAndDisplacement(n1, n2, n3, l, h, b, nodes, u, amp, str, rho)
 
 % Total number of subvolumes
-nsv = nx * ny * nz;
+nsv = n1 * n2 * n3;
 
 % Preallocate global matrices for efficiency
 Deformed = zeros(nsv * 8, 3);
@@ -428,11 +428,11 @@ idV = 0;
 idF = 0;
 
 % Iterate through the 3D grid to compute deformed geometry
-for k = 1:nz
-    for j = 1:ny
-        for i = 1:nx
+for k = 1:n3
+    for j = 1:n2
+        for i = 1:n1
             % Compute global index of the current subvolume
-            q = i + (j - 1) * nx + (k - 1) * nx * ny;
+            q = i + (j - 1) * n1 + (k - 1) * n1 * n2;
 
             % Global node indices
             idnode = nodes(q, :);
@@ -474,5 +474,5 @@ vz = [0 0 0 0 1 1 1 1];
 coord = [(i - 1 + vx') * l, ...
     (j - 1 + vy') * h, ...
     (k - 1 + vz') * b];
-    
+
 %% _____________________________________________________________________END
