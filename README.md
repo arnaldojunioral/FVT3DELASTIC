@@ -1,18 +1,18 @@
 # FVT3DELASTIC
 
-This repository provides a **free** MATLAB implementation of a three-dimensional finite-volume theory (FVT) for stress analysis in linear elastic structures. The formulation is particularly suited for cantilever beam configurations and now includes the capability to model C-shaped cross-sections, enabling the analysis of flexural, torsional, or combined flexural-torsional loading. The code offers:
+This repository provides a **free** MATLAB implementation of a three-dimensional finite-volume theory (FVT) for stress analysis in linear elastic structures. The formulation is particularly suited for cantilever beam configurations and includes the capability to model C-shaped cross-sections, enabling the analysis of flexural, torsional, or combined flexural-torsional loading. The code offers:
 
 * an efficient and flexible code for conducting numerical investigations in solid mechanics;
-* direct control over stress and displacement fields through a local equilibrium-based formulation; and
+* stress and displacement analyses through a local equilibrium-based formulation; and
 * easy extension to other problems involving three-dimensional structural components.
 
 ## Getting started
 
 Save the [FVT3DELASTIC.m](https://raw.githubusercontent.com/arnaldojunioral/FVT3DELASTIC/main/FVT3DELASTIC.m) program (17 kB) and launch MATLAB in the same directory. The program can be executed with the following command:
 
-**FVT3DELASTIC(nx, ny, nz)**
+**FVT3DELASTIC(n1, n2, n3)**
 
-where **nx**, **ny**, and **nz** define the number of subvolumes along the x<sub>1</sub>, x<sub>2</sub>, and x<sub>3</sub> directions, respectively. These parameters specify the discretization of the three-dimensional domain, as illustrated in the figure below.
+where **n1**, **n2**, and **n3** define the number of subvolumes along the x<sub>1</sub>, x<sub>2</sub>, and x<sub>3</sub> directions, respectively. These parameters specify the discretization of the three-dimensional domain, as illustrated in the figure below.
 <!-- <p align="center">
 <img width="350" height="350" alt="image" src="https://github.com/user-attachments/assets/3d92838e-2fcb-40f7-b0da-80d891ec62d6" />
 </p> -->
@@ -92,7 +92,7 @@ Project developed by:
 * Marcelo Victor Oliveira Araujo marcelo.vitor.o.a@gmail.com
 * Romildo dos Santos Escarpini Filho romildo.escarpini@penedo.ufal.br
 * Eduardo Nobre Lages enl@ctec.ufal.br
-* Márcio André Araujo Cavalcante marcio.cavalcante@ceca.ufal.br
+* Márcio André Araújo Cavalcante marcio.cavalcante@ceca.ufal.br
 
 ## References
 
