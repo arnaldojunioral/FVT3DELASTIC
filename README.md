@@ -20,7 +20,8 @@ where **n1**, **n2**, and **n3** define the number of subvolumes along the x<sub
 <img width="510" height="280" alt="image" src="https://github.com/user-attachments/assets/2e5c4d51-aa47-47e7-ab3f-c077e932245d" />
 </p>
 
-<img width="510" height="280" alt="image" src="https://github.com/user-attachments/assets/de9ac3dd-ca13-412a-befa-1c45c4ad40c7" />
+<img width="510" height="280" alt="image" src="https://github.com/user-attachments/assets/c4f38f35-84bc-4236-a1a9-b1b1dc9e11a7" />
+
 
 
 
