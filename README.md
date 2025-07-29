@@ -47,13 +47,11 @@ This example presents a standard benchmark problem involving a three-dimensional
 <img width="400" height="206" alt="image" src="https://github.com/user-attachments/assets/56962135-65c7-44d0-ba56-1cc5c18a9910" />
 </p>
 
+The parameters used in the analysis are listed in the table below. The function call **FVT3DELASTIC(75, 16, 16)** corresponds to a structured mesh discretized into 75 × 16 × 16 subvolumes.
+
 | L   | H   | B   | E      | ν   | P    | pb       | amp   |
 |-----|-----|-----|--------|-----|------|----------|-------|
 | 500 | 100 | 100 | 150000 | 0.3 | 2000 | 'flexure'  | 1000  |
-
-|  L   |  H   |  B   |   E    |  ν   |  P   |   pb    | amp  |
-|:---:|:---:|:---:|:------:|:---:|:---:|:------:|:----:|
-| 500 | 100 | 100 | 150000 | 0.3 | 2000 | flexure | 1000 |
 
 #### Output
 
