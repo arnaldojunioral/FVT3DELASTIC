@@ -20,6 +20,9 @@ where **n1**, **n2**, and **n3** define the number of subvolumes along the x<sub
 <img width="510" height="280" alt="image" src="https://github.com/user-attachments/assets/2e5c4d51-aa47-47e7-ab3f-c077e932245d" />
 </p>
 
+<img width="510" height="280" alt="image" src="https://github.com/user-attachments/assets/094d43aa-5874-4509-b5b8-179b0428e194" />
+
+
 The table below summarizes the key input parameters used in the simulation, including beam geometry, material properties, loading conditions, and visualization settings.
 
 #### Model Parameters
