@@ -59,7 +59,7 @@ The parameters used in the analysis are listed in the table below. The function 
   <tr>
     <td align="center" valign="top">
       <strong>Deformed structure</strong><br>
-      <img width="375" height="207" alt="Deformed" src="https://github.com/user-attachments/assets/55c63898-61b3-42af-91ae-f9514570bcb1" />
+      <img width="370" height="200" alt="Deformed" src="https://github.com/user-attachments/assets/55c63898-61b3-42af-91ae-f9514570bcb1" />
     </td>
     <td align="center" valign="top">
       <strong>Stress fields</strong><br>
